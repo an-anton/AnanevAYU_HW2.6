@@ -29,6 +29,7 @@ class LastViewController: UIViewController {
         viewColor.backgroundColor = color
         viewColor.layer.cornerRadius = viewColor.frame.height / 9
         superViewColorDecomposition()
+        createToolBar()
     }
     
     //MARK: - IBActions
@@ -77,6 +78,27 @@ class LastViewController: UIViewController {
                                             blue: CGFloat(sliderBlue.value),
                                             alpha: 1.0)
         changesLabelValueAndTextFLs()
+    }
+    
+    private func createToolBar() {
+        let toolBar = UIToolbar(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: view.frame.size.width,
+                                              height: 50))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil,
+                                            action: nil)
+        let doneButton = UIBarButtonItem(title: "done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(doneClicked))
+        toolBar.setItems([flexibleSpace, doneButton], animated: true)
+        textFields[0].inputAccessoryView = toolBar
+        textFields[1].inputAccessoryView = toolBar
+        textFields[2].inputAccessoryView = toolBar
+    }
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
 }
 //MARK: - Extension
