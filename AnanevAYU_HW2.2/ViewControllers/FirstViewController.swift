@@ -11,6 +11,7 @@ protocol FirstViewControllerDelegate {
     func setNewValues(sliderRedNewValue: Float, sliderGreenNewValue: Float, sliderBlueValue: Float)
 }
 
+
 class FirstViewController: UIViewController {
     
     @IBAction func SettingsButton() {
