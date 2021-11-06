@@ -1,0 +1,91 @@
+//
+//  ViewController.swift
+//  AnanevAYU_HW2.2
+//
+//  Created by Anton Anan'eV on 21.10.2021.
+//
+
+import UIKit
+
+class LastViewController: UIViewController {
+    
+    //MARK: - Outlets
+    @IBOutlet var viewColor: UIView!
+    @IBOutlet var sliderRed: UISlider!
+    @IBOutlet var sliderGreen: UISlider!
+    @IBOutlet var sliderBlue: UISlider!
+    @IBOutlet var labelValueRed: UILabel!
+    @IBOutlet var labelValueGreen: UILabel!
+    @IBOutlet var labelValueBlue: UILabel!
+    @IBOutlet var textFields: [UITextField]!
+    
+    //MARK: - public properties
+    var color: UIColor!
+    var delegate: FirstViewControllerDelegate!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewColor.backgroundColor = color
+        
+        viewColor.layer.cornerRadius = viewColor.frame.height / 9
+        
+        superViewColorDecomposition()
+    }
+    
+    //MARK: - IBActions
+    @IBAction func sliderRedAction() {
+        changeBackgroundView()
+    }
+    
+    @IBAction func sliderGreenAction() {
+        changeBackgroundView()
+    }
+    
+    @IBAction func sliderBlueAction() {
+        changeBackgroundView()
+    }
+    
+    @IBAction func doneButton() {
+        delegate.setNewValues(sliderRedNewValue: sliderRed.value,
+                              sliderGreenNewValue: sliderGreen.value,
+                              sliderBlueValue: sliderBlue.value)
+        dismiss(animated: true)
+    }
+    //MARK: - Private methods
+    private func superViewColorDecomposition() {
+        
+        guard let colorBackground = color.cgColor.components else {return}
+        sliderRed.value = Float(colorBackground[0])
+        sliderGreen.value = Float(colorBackground[1])
+        sliderBlue.value = Float(colorBackground[2])
+        changesLabelValueAndTextFLs()
+    }
+    
+    private func changesLabelValueAndTextFLs() {
+        labelValueRed.text = String(format: "%.2f", sliderRed.value)
+        labelValueGreen.text = String(format: "%.2f", sliderGreen.value)
+        labelValueBlue.text = String(format: "%.2f", sliderBlue.value)
+        
+        textFields[0].text = labelValueRed.text
+        textFields[1].text = labelValueGreen.text
+        textFields[2].text = labelValueBlue.text
+    }
+    
+    private func changeBackgroundView() {
+        viewColor.backgroundColor = UIColor(red: CGFloat(sliderRed.value),
+                                            green: CGFloat(sliderGreen.value),
+                                            blue: CGFloat(sliderBlue.value),
+                                            alpha: 1.0)
+        changesLabelValueAndTextFLs()
+    }
+}
+//MARK: - Extension
+extension LastViewController: UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+}
