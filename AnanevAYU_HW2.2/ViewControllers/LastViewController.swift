@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class LastViewController: UIViewController {
     
     //MARK: - Outlets
@@ -56,6 +55,7 @@ class LastViewController: UIViewController {
     private func superViewColorDecomposition() {
         
         guard let colorBackground = color.cgColor.components else {return}
+        print(colorBackground.count)
         sliderRed.value = Float(colorBackground[0])
         sliderGreen.value = Float(colorBackground[1])
         sliderBlue.value = Float(colorBackground[2])

@@ -35,7 +35,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Sj-Rz-M5v"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.67622126365194513" green="0.75109946322278909" blue="0.83088995485889672" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2Rh-Uk-OEm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Sj-Rz-M5v" secondAttribute="leading" symbolic="YES" id="2WY-Fo-4wQ"/>
                             <constraint firstItem="7Sj-Rz-M5v" firstAttribute="trailing" secondItem="2Rh-Uk-OEm" secondAttribute="trailing" constant="4" id="F8o-WU-hQg"/>
@@ -98,7 +98,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="pIG-b8-fWb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" textContentType="shipment-tracking-number"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mwm-7n-VpC"/>
                                                 </connections>
@@ -140,7 +140,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="ZMr-W1-0W1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="bb7-Jl-hAu"/>
                                                 </connections>
@@ -182,7 +182,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="7V3-Eu-2cJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Gq4-A7-cwB"/>
                                                 </connections>
