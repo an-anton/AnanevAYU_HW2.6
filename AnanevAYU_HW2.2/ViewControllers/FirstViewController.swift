@@ -13,11 +13,6 @@ protocol FirstViewControllerDelegate {
 
 class FirstViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     @IBAction func SettingsButton() {
     }
     

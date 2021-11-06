@@ -26,11 +26,8 @@ class LastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewColor.backgroundColor = color
-        
         viewColor.layer.cornerRadius = viewColor.frame.height / 9
-        
         superViewColorDecomposition()
     }
     
@@ -48,6 +45,7 @@ class LastViewController: UIViewController {
     }
     
     @IBAction func doneButton() {
+        view.endEditing(true)
         delegate.setNewValues(sliderRedNewValue: sliderRed.value,
                               sliderGreenNewValue: sliderGreen.value,
                               sliderBlueValue: sliderBlue.value)
@@ -88,4 +86,24 @@ extension LastViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let newValue = textField.text else { return }
+        guard let numberValue = Float(newValue) else { return }
+
+        if textField == textFields[0] {
+            sliderRed.setValue(numberValue, animated: true)
+            changesLabelValueAndTextFLs()
+            changeBackgroundView()
+            
+        } else if textField == textFields[1] {
+            sliderGreen.setValue(numberValue, animated: true)
+            changesLabelValueAndTextFLs()
+            changeBackgroundView()
+            
+        } else if textField == textFields[2] {
+            sliderBlue.setValue(numberValue, animated: true)
+            changesLabelValueAndTextFLs()
+            changeBackgroundView()
+        }
+    }
 }

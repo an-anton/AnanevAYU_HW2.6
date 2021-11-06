@@ -98,7 +98,10 @@
                                                     <constraint firstAttribute="width" constant="50" id="pIG-b8-fWb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mwm-7n-VpC"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -137,7 +140,10 @@
                                                     <constraint firstAttribute="width" constant="50" id="ZMr-W1-0W1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bb7-Jl-hAu"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -176,7 +182,10 @@
                                                     <constraint firstAttribute="width" constant="50" id="7V3-Eu-2cJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Gq4-A7-cwB"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
